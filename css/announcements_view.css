@@ -1,0 +1,371 @@
+/* Windows 95 MSN Messenger Style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #C0C0C0 0%, #E0E0E0 50%, #C0C0C0 100%);
+    background-size: 100% 4px;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MSN Window */
+.msn-window {
+    width: 100%;
+    max-width: 600px;
+    background: #ECE9D8;
+    border: 2px outset #C0C0C0;
+    box-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        inset 1px 1px 0 #FFF,
+        inset -1px -1px 0 #808080;
+}
+
+/* Title Bar */
+.msn-titlebar {
+    background: linear-gradient(to bottom, #0A246A, #0084FF);
+    color: white;
+    padding: 4px 6px;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+}
+
+.titlebar-icon {
+    margin-right: 4px;
+}
+
+.titlebar-title {
+    flex: 1;
+    font-weight: bold;
+}
+
+.titlebar-buttons {
+    display: flex;
+    gap: 2px;
+}
+
+.titlebar-buttons button {
+    width: 18px;
+    height: 14px;
+    border: 1px outset #C0C0C0;
+    background: #C0C0C0;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 0;
+    color: #000;
+}
+
+.titlebar-buttons button:active {
+    border-style: inset;
+}
+
+.btn-close {
+    background: #C0C0C0;
+}
+
+.btn-close:hover {
+    background: #FF0000;
+    color: white;
+}
+
+/* Content Area */
+.msn-content {
+    background: white;
+    min-height: 400px;
+    max-height: 70vh;
+    overflow-y: auto;
+    border: 1px inset #C0C0C0;
+}
+
+/* Messages */
+.msn-messages {
+    padding: 10px;
+}
+
+.msn-message {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0084FF, #00A4FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border: 2px outset #C0C0C0;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.message-content {
+    flex: 1;
+    background: #F0F0F0;
+    border: 1px inset #C0C0C0;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sender-name {
+    color: #0084FF;
+    font-weight: bold;
+}
+
+.priority-indicator {
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.priority-indicator.priority-low {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #4caf50;
+}
+
+.priority-indicator.priority-medium {
+    background: #fff9c4;
+    color: #f57f17;
+    border: 1px solid #fbc02d;
+}
+
+.priority-indicator.priority-high {
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef5350;
+}
+
+.priority-indicator.priority-urgent {
+    background: #ff5722;
+    color: white;
+    border: 1px solid #d50000;
+    animation: urgentPulse 1s infinite;
+}
+
+@keyframes urgentPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.msn-message.priority-urgent {
+    border-left: 4px solid #ff5722 !important;
+    background: #fff3e0 !important;
+}
+
+.msn-message.priority-high {
+    border-left: 4px solid #f44336 !important;
+    background: #ffebee !important;
+}
+
+.msn-message.priority-medium {
+    border-left: 4px solid #ff9800 !important;
+    background: #fff9c4 !important;
+}
+
+.msn-message.priority-low {
+    border-left: 4px solid #4caf50 !important;
+    background: #e8f5e9 !important;
+}
+
+.message-time {
+    color: #666;
+    font-size: 10px;
+}
+
+.message-text {
+    color: #000;
+    line-height: 1.4;
+    font-size: 13px;
+}
+
+/* Empty State */
+.msn-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.msn-empty h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.msn-empty p {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Status Bar */
+.msn-statusbar {
+    background: #C0C0C0;
+    border-top: 1px inset #C0C0C0;
+    padding: 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+}
+
+.statusbar-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00FF00;
+    border: 1px solid #000;
+    box-shadow: 0 0 4px #00FF00;
+}
+
+.statusbar-right {
+    color: #666;
+}
+
+/* Notification Button */
+.notification-fab {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.btn-notify {
+    background: linear-gradient(to bottom, #C0C0C0, #808080);
+    border: 2px outset #C0C0C0;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        inset 1px 1px 0 #FFF;
+    transition: all 0.1s;
+}
+
+.btn-notify:active {
+    border-style: inset;
+    transform: translateY(-2px);
+}
+
+.btn-notify:hover {
+    background: linear-gradient(to bottom, #D0D0D0, #909090);
+}
+
+/* Scrollbar Styling */
+.msn-content::-webkit-scrollbar {
+    width: 16px;
+}
+
+.msn-content::-webkit-scrollbar-track {
+    background: #C0C0C0;
+    border: 1px inset #808080;
+}
+
+.msn-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #C0C0C0, #808080);
+    border: 1px outset #C0C0C0;
+}
+
+.msn-content::-webkit-scrollbar-button {
+    background: #C0C0C0;
+    border: 1px outset #808080;
+    height: 16px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .msn-window {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .msn-content {
+        max-height: 60vh;
+    }
+    
+    .btn-notify {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+    
+    .titlebar-title {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .avatar-circle {
+        width: 35px;
+        height: 35px;
+        font-size: 11px;
+    }
+    
+    .message-text {
+        font-size: 12px;
+    }
+}

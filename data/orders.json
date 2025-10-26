@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1761482294-2817",
+        "customer_id": "0",
+        "customer_name": null,
+        "is_wedding": false,
+        "product": "E.Ç",
+        "address": "Atatürk Cd. No : 318\/A",
+        "amount": 45,
+        "date": "2025-10-26 00:00:00",
+        "time": "15:38",
+        "notes": "",
+        "created_at": "2025-10-26 13:38:14",
+        "processed_to_debt": false,
+        "delivered": false
+    }
+]
