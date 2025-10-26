@@ -1,0 +1,30 @@
+===============================================
+  LOGIN SİSTEMİ - KULLANICI BİLGİLERİ
+===============================================
+
+Varsayılan Kullanıcılar:
+
+1. admin / admin123
+2. demo / demo123
+3. test / test123
+
+===============================================
+  TESTİ NASIL YAPARIM?
+===============================================
+
+1. Tarayıcınızı açın
+2. http://localhost/index.php adresine gidin
+3. Yukarıdaki kullanıcı bilgilerinden birini girin
+4. "Giriş Yap" butonuna tıklayın
+
+===============================================
+  ÖNEMLİ NOTLAR
+===============================================
+
+- Bu bir demo sistemidir
+- Gerçek kullanım için veritabanı ekleyin
+- Güvenlik önlemlerini artırın
+- Rate limiting ayarlarını özelleştirin
+
+===============================================
+
